@@ -16,7 +16,8 @@ bot.on('message', async (msg) => {
                 inline_keyboard: [
                     [{ text: 'Играть', web_app: { url: webAppUrl } }],
                     [{ text: 'Подписаться на канал', web_app: { url: webAppUrl } }],
-                    [{ text: 'Как обменять очки на 🔑 steam', web_app: { url: webAppUrl } }]
+                    [{ text: 'Как обменять очки на 🔑 steam', web_app: { url: webAppUrl } }],
+                    [{ text: 'Тест работает ли', web_app: { url: webAppUrl } }]
                 ]
             }
         });
