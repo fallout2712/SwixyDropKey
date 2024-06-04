@@ -5,6 +5,7 @@ const token = '7203291206:AAEKqgqzVlLtMLtKr4sTA-rcp3vEoBAb-N0';
 const bot = new TelegramBot(token, { polling: true });
 
 const webAppUrl = "https://fallout2712.github.io/TestTG/";
+const linkToParty = "https://t.me/keydrop_test/12";
 
 bot.on('message', async (msg) => {
     const chatId = msg.chat.id;
@@ -15,7 +16,7 @@ bot.on('message', async (msg) => {
             reply_markup: {
                 inline_keyboard: [
                     [{ text: 'Играть', web_app: { url: webAppUrl } }],
-                    [{ text: 'Подписаться на канал', web_app: { url: webAppUrl } }],
+                    [{ text: 'Подписаться на канал', web_app: { url: linkToParty } }],
                     [{ text: 'Как обменять очки на 🔑 steam', web_app: { url: webAppUrl } }]
                 ]
             }
