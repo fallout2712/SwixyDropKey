@@ -24,3 +24,15 @@ bot.on('message', async (msg) => {
         });
     }
 });
+
+bot.on('web_app_data', async (ctx) => {
+    try {
+        const data = JSON.parse(ctx.webAppData.data);
+        const feedback = data?.feedback ?? 'empty message';
+        await ctx.reply(`Ваше сообщение: ${feedback}`);
+    } catch (error) {
+        await ctx.reply('Произошла ошибка при обработке данных.');
+        console.error(error);
+    }
+});
+
