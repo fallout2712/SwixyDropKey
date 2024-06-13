@@ -25,13 +25,13 @@ bot.on('message', async (msg) => {
     }
 });
 
-bot.on('web_app_data', async (ctx) => {
+bot.on('web_app_data', async (msg) => {
     try {
-        const data = JSON.parse(ctx.webAppData.data);
-        const feedback = data?.feedback ?? 'empty message';
-        await ctx.reply(`Ваше сообщение: ${feedback}`);
+        const data = JSON.parse(msg.web_app_data.data); // Изменено на msg.web_app_data.data
+        const feedback = data.feedback ?? 'empty message';
+        await bot.sendMessage(msg.chat.id, `Ваше сообщение: ${feedback}`); // Используем msg.chat.id
     } catch (error) {
-        await ctx.reply('Произошла ошибка при обработке данных.');
+        await bot.sendMessage(msg.chat.id, 'Произошла ошибка при обработке данных.');
         console.error(error);
     }
 });
