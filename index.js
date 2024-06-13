@@ -1,7 +1,7 @@
 const TelegramBot = require('node-telegram-bot-api');
+const { exec } = require('child_process');
 
 const token = '7203291206:AAEKqgqzVlLtMLtKr4sTA-rcp3vEoBAb-N0';
-
 const bot = new TelegramBot(token, { polling: true });
 
 const webAppUrl = "https://fallout2712.github.io/TestTG/";
@@ -35,4 +35,3 @@ bot.on('web_app_data', async (msg) => {
         console.error(error);
     }
 });
-
